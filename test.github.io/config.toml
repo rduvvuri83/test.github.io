@@ -24,7 +24,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "/post/"  
 [[menu.main]]
     name = "GitHub"
-    url = "https://github.com/rduvvuri83"
+    url = "https://github.com/rduvvuri83/test.github.io.git/"
 
 [params]
     description = "A website built through Hugo and blogdown."
@@ -43,7 +43,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     coverImage = "Bazookas Logo 0331 V2.jpg"
 
     [params.logo]
-    url = "Bazookas Logo 0331 V2"
+    url = "https://github.com/rduvvuri83/test.github.io.git/"
     width = 50
     height = 50
     alt = "Logo"
