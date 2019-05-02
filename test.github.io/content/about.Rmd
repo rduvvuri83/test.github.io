@@ -1,0 +1,12 @@
+---
+title: "About Me"
+author: "Ravi Duvvuri"
+date: "May 1, 2019"
+output: html_document
+---
+
+Hello, I am Ravi Duvvuri, a data savy IT professional who is ambitious and getting back to school after almost 10 years to pursue Masters in Data Science program. In my IT career so far, I have implemented couple of Enterprise Dataware Solutions in different capacities that include Requirement Gathering, Architecture, Design, Development and Testing.
+
+Business Intelligence, ETL Development and SQL are my strong areas technically and my communication skills combined with analytical skills help me thrive in customer facing discussions.
+
+When I not busy planning for rest of my life, I enjoy playing cricket, volley ball and I am good at playing chess. I like driving and I drove non-stop for 30 hours when I bough my first car in 2008 from CA to MO.

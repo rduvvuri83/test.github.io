@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My First Website</title>
+    <link>/rduvvuri83/PS4.git/post/</link>
+    <description>Recent content in Posts on My First Website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/rduvvuri83/PS4.git/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Shiny App Details</title>
+      <link>/rduvvuri83/PS4.git/2019/05/02/my-first-shiny-app-details/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/rduvvuri83/PS4.git/2019/05/02/my-first-shiny-app-details/</guid>
+      <description>I have deployed my first shiny app when I was working on the Problem Set # 3
+This was a challenging yet rewarding assignment where we were given clear instructions and chunks of code
+In order to complete this assignment, one has to understand the concept of reactivity and how to render reactive data elements.
+Below is the final code that I have deployed and feel free to contact me if you have any questions.</description>
+    </item>
+    
+    <item>
+      <title>My First Shiny App Details</title>
+      <link>/rduvvuri83/PS4.git/2019/05/02/my-first-shiny-app-details/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/rduvvuri83/PS4.git/2019/05/02/my-first-shiny-app-details/</guid>
+      <description>I have deployed my first shiny app when I was working on the Problem Set # 3
+This was a challenging yet rewarding assignment where we were given clear instructions and chunks of code
+In order to complete this assignment, one has to understand the concept of reactivity and how to render reactive data elements.
+Below is the final code that I have deployed and feel free to contact me if you have any questions.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/rduvvuri83/PS4.git/2015/07/23/hello-r-markdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/rduvvuri83/PS4.git/2015/07/23/hello-r-markdown/</guid>
+      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+  </channel>
+</rss>

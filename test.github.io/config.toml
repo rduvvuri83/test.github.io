@@ -1,0 +1,50 @@
+baseurl = "https://github.com/rduvvuri83/PS4.git/"
+languageCode = "en-us"
+title = "My First Website"
+theme = "hugo-now-ui-master"
+googleAnalytics = ""
+disqusShortname = ""
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+[[menu.main]]
+    name = "blog"
+    weight = 100
+    identifier = "blog"
+    url = "/blog/"   
+[[menu.main]]
+    name = "post"
+    weight = 100
+    identifier = "post"
+    url = "/post/"  
+[[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/rduvvuri83"
+
+[params]
+    description = "A website built through Hugo and blogdown."
+
+    # options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.12.0"
+    highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "github"
+
+    MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
+    MathJaxVersion = "2.7.5"
+
+    # path to the favicon, under "static"
+    favicon = "favicon.ico"
+    coverImage = "Bazookas Logo 0331 V2.jpg"
+
+    [params.logo]
+    url = "Bazookas Logo 0331 V2"
+    width = 50
+    height = 50
+    alt = "Logo"
+

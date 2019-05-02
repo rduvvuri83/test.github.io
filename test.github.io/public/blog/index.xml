@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on My First Website</title>
+    <link>/rduvvuri83/PS4.git/blog/</link>
+    <description>Recent content in Blogs on My First Website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/rduvvuri83/PS4.git/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Blog</title>
+      <link>/rduvvuri83/PS4.git/blog/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/rduvvuri83/PS4.git/blog/blog/</guid>
+      <description>Spring 2019: DSBA5122 (May 1st 2019)Visual Analytics is my first course in the DSBA program. The course website was built by Andrew Heiss and the content is managed by Prof.Ryan. Course schedule is very well laid out and it was upto date with the Readings, Assignments and Class material. Datacamp courses are designed in such a way that even a student with no background of R can follow these courses and get upto speed.</description>
+    </item>
+    
+  </channel>
+</rss>

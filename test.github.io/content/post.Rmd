@@ -1,0 +1,164 @@
+---
+title: My First Shiny App Details
+author: Ravi Duvvuri
+date: '2019-05-02'
+slug: my-first-shiny-app-details
+categories: []
+tags: []
+---
+
+I have deployed my first shiny app when I was working on the Problem Set # 3
+
+This was a challenging yet rewarding assignment where we were given clear instructions and chunks of code
+
+In order to complete this assignment, one has to understand the concept of reactivity and how to render reactive data elements.
+
+Below is the final code that I have deployed and feel free to contact me if you have any questions.
+
+library(shiny)
+library(quanteda)
+library(RColorBrewer)
+library(ggplot2)
+library(shinythemes)
+library(memoise)
+
+# The list of valid books
+books <- list("A Mid Summer Night's Dream" = "summer",
+              "The Merchant of Venice" = "merchant",
+              "Romeo and Juliet" = "romeo")
+
+# task4: add in getDfm function for pre-processing
+
+getDfm <- function(book, minterms, stem, punct, ngrams) {
+  # check that only one of three books is selected
+  if (!(book %in% books))
+    stop("Unknown book")
+  
+  # looks in data sub-folder for the files (e.g., romeo.txt, merchant.txt, summer.txt)
+  text <- readLines(sprintf("./data/%s.txt", book), encoding="UTF-8")
+  
+  # could also pass text column of dataframe instead
+  myCorpus <- corpus(text)
+  
+  # if... else if statement depending on 
+  if(ngrams == "unigram"){
+    ng = 1
+  }else if(ngrams == "both"){
+    ng = 1:2
+  }else if(ngrams == "bigram"){
+    ng = 2
+  }
+  
+  dfm(myCorpus, remove = stopwords('english'), 
+      remove_punct = punct, stem = stem, ngrams = ng) %>%
+    dfm_trim(min_termfreq = minterms, verbose = FALSE)
+}
+
+mf<- memoise(getDfm) # Added Memoise to getDfm
+
+# task6: add in shinythemes, memoize function
+
+ui <- fluidPage(theme = shinytheme("superhero"), # Used Superhero Shiny Theme..
+  titlePanel("Shakespeare's Plays Word Frequencies"), # Application title
+  
+  sidebarLayout(position = "left", # Set the sidebar position in the layout
+                
+     sidebarPanel(
+                  
+# task1: add in the sidebarLayout with sidebarPanel and mainPanel
+       
+# task2: add in the inputs in the sidebarPanel
+       
+# task1: within the mainPanel, create two tabs (Word Cloud and Frequency)
+
+
+       # First Input Selection
+       selectInput(inputId = "book", 
+                   label = "Choose a book",
+                   choices = books, 
+                   selected = "romeo"),
+       # Second Input Selection
+       checkboxInput(inputId = "stem", 
+                    label = "Stem Words:",
+                    value = FALSE),
+       # Third Input Selection
+       checkboxInput(inputId = "punct", 
+                     label = "Remove Punctuation:",
+                     value = TRUE),
+       # Fourth Input Selection
+       radioButtons(inputId = "ngrams", 
+                     label = "Choice in n-grams:",
+                     choices = c("Unigrams only" = "unigram",
+                                  "Unigrams & Bigrams" = "both",
+                                  "Bigrams only" = "bigram")),
+       # Fifth Input Selection
+       sliderInput(inputId = "minterms", 
+                   label = "Minimum Frequency:",
+                   min = 1,
+                   max = 50,
+                   value = 10),
+       # Adding a Horizontal Line
+       hr(),
+                  
+       # Adding Action Button to show rerun option
+                  
+       actionButton(inputId = "action",
+                    label = "Rerun")
+       ),
+                # task1: within the mainPanel, create two tabs (Word Cloud and Frequency)
+     # Outputs
+    # task3: add in the outputs in the sidebarPanel
+    # task6: and modify your counts output object height to 600px
+     mainPanel(
+       tabsetPanel(position = "right",
+                   tabPanel("Word Cloud", plotOutput("cloud")), 
+                   tabPanel("Counts",plotOutput("freq", height = "600px", width = "100%")) # Added Height and Width
+                  )
+                )
+)
+)
+ 
+server <- function(input, output) {
+  
+  # task5: add in reactivity for getDfm function based on inputs
+  
+  dfm <- reactive({
+    input$action
+    isolate({
+      withProgress({
+        setProgress(message = "Processing corpus...")
+          mf(book = input$book, # when using memoise_getDfm...I am getting an error here
+                 stem = input$stem, 
+                 punct = input$punct, 
+                 ngrams = input$ngrams, 
+                 minterms = input$minterms)
+    })
+    })
+    })
+  
+output$cloud <- renderPlot({
+  v <- dfm()
+  textplot_wordcloud(v,
+                     min_size=0.5,
+                     max_size=6,
+                     max_words=100,
+                     color=brewer.pal(8, "Dark2"))
+ })
+
+output$freq <- renderPlot({
+  v <- dfm()
+  dfm_freq <- textstat_frequency(v, n = 50)
+  dfm_freq$feature <- with(dfm_freq, reorder(feature, frequency)) # sort in descending
+
+  ggplot(dfm_freq, aes(x = feature, y = frequency)) +
+           geom_point() +
+           coord_flip()+ # Coordinate Flip
+           theme(text = element_text(size = 18))
+
+})
+  
+} 
+shinyApp(ui = ui, server = server)
+
+
+
