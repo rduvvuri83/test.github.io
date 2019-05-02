@@ -1,4 +1,4 @@
-baseurl = "https://github.com/rduvvuri83/PS4.git/"
+baseurl = "https://github.com/rduvvuri83/test.github.io.git/"
 languageCode = "en-us"
 title = "My First Website"
 theme = "hugo-now-ui-master"
